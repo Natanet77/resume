@@ -1,0 +1,75 @@
+<div>
+    <div>
+        <h1>{{name}}</h1>
+    </div>
+    <div>
+        <p>{{description}}</p>
+    </div>
+    <div>
+        {{#with history}}
+        <div>Year: {{year}}</div>
+        <div>Founder: {{founder}}</div>
+        {{/with}}
+    </div>
+</div>
+<div>
+    <div>
+        <b>Types</b>
+    </div>
+    <ul>
+        {{#each types}}
+        <div>
+            <span class="badge text-bg-primary">{{this}}</span>
+        </div>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <div><b>Syntax</b></div>
+    <ul>{{#each syntax}}
+        <div>
+            <span class="badge rounded-pill text-bg-info">{{this}}</span>
+        </div>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <div><b>Features</b></div>
+    <ul>{{#each features}}
+        <div>
+            <span class="badge rounded-pill text-bg-info">{{this}}</span>
+        </div>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <div><b>Librarieses</b></div>
+    <ul>{{#each libraries}}
+        <div>
+            <span class="badge rounded-pill text-bg-success">{{this}}</span>
+        </div>
+        {{/each}}
+    </ul>
+</div>
+<div>
+    <div><b>Tools</b></div>
+    <ul>{{#each tools}}
+        <div>
+            <span class="badge rounded-pill text-bg-warning">{{this}}</span>
+        </div>
+        {{/each}}
+    </ul>
+</div>
+<section>
+    {{> title data="Community" }}
+    <div>
+
+        <ul>
+            {{#each community}}
+            <div>Name: <button type="button" class="btn btn-link">{{name}}</button></div>
+            <div>Type: {{type}}</div>
+            {{/each}}
+        </ul>
+
+    </div>
+</section>
