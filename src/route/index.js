@@ -977,7 +977,6 @@ router.get('/task21', function (req, res) {
 
 // router.get Створює нам один ентпоїнт
 
-
 router.get('/facebook', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -1132,7 +1131,10 @@ router.get('/facebook', function (req, res) {
         ],
       },
     ],
-=======
+  })
+})
+// ================================================================
+
 router.get('/mac', function (req, res) {
   // res.render генерує нам HTML сторінку
 
