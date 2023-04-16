@@ -1,0 +1,41 @@
+<hr>
+
+{{> breadcrump}}
+<br>
+<hr>
+
+<div class="row">
+
+    {{#with newsData}}
+
+    <img src="{{photo}}">
+    <h2 class="mt-3">{{head.heading}}</h2>
+    <p class="mt-3">{{head.description}}</p>
+
+    {{#each body}}
+    <h3>{{title}}</h3>
+    <p class="mb-3">{{text}}</p>
+    {{/each}}
+
+    {{/with}}
+</div>
+<hr>
+{{> shoppost}}
+<hr>
+<section class="row gy-4">
+    <div class="col-12">
+        {{#with service}}
+        <div class="text-light text-center bg-success">
+            <h2 class="pt-3">{{title}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="flex-column pb-4 mb-4">
+                <a href="{{link}}" target="_blank" class="btn btn-primary">{{text}}</a>
+            </div>
+
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+</section>
+<hr>
