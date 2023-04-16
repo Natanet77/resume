@@ -1,0 +1,124 @@
+<hr>
+<div class="row">
+    <div class="col-6 ms-5">
+        <ol class="breadcrumb">
+            {{#each breadcrumb}}
+            {{#if @last}}
+            <li class="breadcrumb-item">{{name}}</li>
+            {{else}}
+            <li class="breadcrumb-item"><a href={{url}}>{{name}}</a></li>
+            {{/if}}
+            {{/each}}
+        </ol>
+    </div>
+</div>
+<br>
+
+
+<div class="row">
+
+    {{#with productData}}
+
+    <div class="col-6">
+        <img src="{{img}}" width="360">
+
+        <div class="card mt-5">
+            <div class="card-body">
+                {{#with info}}
+
+                <b>{{title}}</b>
+                <p>{{about}}</p>
+                <b>{{price}}</b>
+                <div>
+                    {{#each category}}
+                    {{#if isHot}}
+                    <span class='bage text-bg-warning ms-1 rounded-pill'>{{name}}
+                    </span>
+                    {{/if}}
+                    {{#if isNew}}
+                    <span class='bage text-bg-primary ms-1 rounded-pill'>{{name}}
+                    </span>
+                    {{/if}}
+                    {{#if isBonus}}
+                    <span class='bage text-bg-info ms-1 rounded-pill'>{{name}}
+                    </span>
+                    {{/if}}
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div class="card gy-4">
+        <div class="card-body">
+            <div class="col-9">
+
+                {{#each actionList}}
+                {{#if isWarning}}
+                <button class="btn btn-warning px-3 me-4">{{name}}</button>
+                {{/if}}
+                {{#if isError}}
+                <button class="btn btn-outline-danger me-4 px-3">{{name}}</button>
+                {{/if}}
+                {{#if isSuccess}}
+                <button class="btn btn-success me-4 px-3">{{name}}</button>
+                {{/if}}
+                {{#if isSuccess}}
+                <button class="btn btn-outline-success px-3 me-4">{{name}}</button>
+                {{/if}}
+                {{/each}}
+
+            </div>
+
+        </div>
+    </div>
+    {{/with}}
+
+
+
+    {{!-- {{#with winner}}
+    <h2>{{title}}</h2>
+    <table class="table">
+        {{#with table}}
+        <thead>
+            <tr>
+                {{#each head}}
+                <th>{{this}}</th>
+                {{/each}}
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {{#each user}}
+
+                <th>{{place}}</th>
+                <td>{{name}}</td>
+                <td>{{surname}}</td>
+                <td>{{nickname}}</td>
+
+            </tr>
+        </tbody>
+        {{/each}}
+    </table>
+    {{/with}}
+    {{/with}} --}}
+
+
+
+
+
+
+</div>
+
+
+
+{{> shopcard}}
+<br>
+<hr>
+
+
+
+{{> shopaction}}
+<br>
+<hr>
