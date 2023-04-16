@@ -1854,11 +1854,19 @@ router.get('/shophome', function (req, res) {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
+
+router.get('/shopproduct', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('shopproduct', {
+
 router.get('/shopnews', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopnews', {
+
     layout: 'shop',
     navigation: {
       links: [
@@ -1879,6 +1887,84 @@ router.get('/shopnews', function (req, res) {
 
     breadcrumb: [
       { name: 'Home', url: 'https://github.com/' },
+
+      { name: 'PC', url: 'https://www.google.com/' },
+      { name: 'Windows', url: 'https://github.com/' },
+      { name: 'Product PC #3123', url: null },
+    ],
+
+    productData: {
+      img: 'https://picsum.photos/400/200',
+
+      info: {
+        title: 'Product PC Asus 331 BC 671',
+        about:
+          "Some quick example text to build on the card title and make up the bulk of the card's content.",
+        price: '1000$',
+
+        category: [
+          { name: 'HOT', isHot: true },
+          { name: 'New', isNew: true },
+          { name: 'Bonus', isBonus: true },
+        ],
+      },
+
+      actionList: [
+        { name: 'Buy', isWarning: true },
+        { name: 'Add to cart', isError: true },
+        { name: 'Like', isSuccess: true },
+        { name: 'Share', isGood: true },
+      ],
+
+      item: {
+        head: ['#', 'color', 'price'],
+
+        body: [
+          ['id312', 'red', '1100$'],
+          ['id532', 'blue', '1050$'],
+          ['id643', 'dark', '999$'],
+        ],
+      },
+
+      param: {
+        title: 'Product params',
+        list: ['Экран 15.6', 'IPS (1920x1080)', 'Full HD'],
+      },
+
+      alert: {
+        isError: true,
+        text: 'Danger! This is a danger alert — check it out!',
+      },
+    },
+
+    goodsOtherBlock: {
+      title: 'See other products',
+      cards: [
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'iPhone 13',
+          description:
+            'The latest iPhone model features a new A15 Bionic chip, improved camera system, and longer battery life.',
+          isHot: false,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'MacBook Pro',
+          description:
+            "Apple's high-end laptop features a 16-inch Retina display, powerful M1 Pro or M1 Max chip, and up to 64GB of RAM.",
+          isHot: true,
+          idNew: false,
+        },
+        {
+          image: 'https://picsum.photos/400/200',
+          title: 'AirPods Pro',
+          description:
+            "Apple's premium wireless earbuds feature active noise cancellation, a customizable fit, and up to 4.5 hours of listening time.",
+          isHot: false,
+          idNew: false,
+        },
+
       { name: 'News', url: 'https://www.google.com/' },
       { name: 'Today', url: 'https://github.com/' },
       { name: 'About cats', url: null },
@@ -1950,6 +2036,7 @@ router.get('/shopnews', function (req, res) {
           isTop: false,
           idNew: true,
         },
+
       ],
     },
 
@@ -1961,6 +2048,9 @@ router.get('/shopnews', function (req, res) {
         {
           text: 'Show More',
           link: 'https://www.youtube.com/',
+
+          rel: 'show-more',
+
         },
       ],
     },
