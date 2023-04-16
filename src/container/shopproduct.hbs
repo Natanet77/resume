@@ -50,6 +50,52 @@
         </div>
     </div>
 
+
+    <div class='col-1'></div>
+
+    <div class='col-5'>
+        <table class="table">
+            <thead>
+                <tr>
+                    {{#each item.head}}
+                    <th>
+                        <b>{{this}}</b>
+                    </th>
+                    {{/each}}
+                </tr>
+            </thead>
+
+            <tbody>
+                {{#each item.body}}
+                <tr>
+                    {{#each this}}
+                    <th>
+                        {{this}}
+                    </th>
+                    {{/each}}
+                </tr>
+                {{/each}}
+            </tbody>
+
+        </table>
+        <div class="card">
+            <div class="card-header">
+                {{param.title}}
+            </div>
+            <ul class="list-group">
+                {{#each param.list}}
+                <li class="list-group-item">{{this}}</li>
+                {{/each}}
+
+            </ul>
+        </div> <br>
+        {{#if alert.isError}}
+        <div class="alert alert-danger">
+            {{alert.text}}
+        </div>
+        {{/if}}
+
+    </div>
     <div class="card gy-4">
         <div class="card-body">
             <div class="col-9">
@@ -74,40 +120,6 @@
         </div>
     </div>
     {{/with}}
-
-
-
-    {{!-- {{#with winner}}
-    <h2>{{title}}</h2>
-    <table class="table">
-        {{#with table}}
-        <thead>
-            <tr>
-                {{#each head}}
-                <th>{{this}}</th>
-                {{/each}}
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                {{#each user}}
-
-                <th>{{place}}</th>
-                <td>{{name}}</td>
-                <td>{{surname}}</td>
-                <td>{{nickname}}</td>
-
-            </tr>
-        </tbody>
-        {{/each}}
-    </table>
-    {{/with}}
-    {{/with}} --}}
-
-
-
-
-
 
 </div>
 
