@@ -38,7 +38,6 @@
             <div class="form-check form-switch">
                 <input type="checkbox" class="form-check-input" {{#if isActive}}checked{{/if}}>
                 <label class="form-check-label">{{text}}</label>
-
             </div>
         </div>
         {{/each}}
@@ -46,6 +45,48 @@
         {{/with}}
         <hr>
 
+    </div>
+    <div class="col-3">
+        <div class="card m-2">
+            <div class="card-body">
+                {{#each action_block}}
+
+                <button class="btn my-1 
+            {{#if isSuccess}}btn-success{{/if}} 
+            {{#if isDanger}}btn-danger{{/if}}
+            {{#if isInfo}}btn-info text-light{{/if}}">
+                    {{text}}
+                </button>
+                {{/each}}
+            </div>
+        </div>
+        <div class="card m-2">
+            <div class="card-body">
+                {{#with total}}
+                <h4>{{title}}</h4>
+                {{#each item_list}}
+                <div>{{name}}: {{price}}</div>
+                {{/each}}
+                <hr>
+                {{#each additional_info}}
+                <div> {{text}}: {{value}}</div>
+                {{/each}}
+                <hr>
+
+                <div> {{total_price.text}}: {{total_price.value}}</div>
+                <hr>
+                {{#each button}}
+                {{#if isPrimary}}
+                <button type="button" class="btn btn-primary btn-sm my-2">{{text}}</button>
+                {{/if}}
+                {{#if isOutline}}
+                <button type="button" class="btn btn-outline-primary btn-sm my-2">{{text}}</button>
+                {{/if}}
+                {{/each}}
+
+                {{/with}}
+            </div>
+        </div>
     </div>
 </div>
 
@@ -69,7 +110,7 @@
         {{/each}}
     </div>
 </div>
-
+<hr>
 {{#each delivery_type}}
 <div class="pt-3 pb-2">
     <div class="form-check">
@@ -224,47 +265,6 @@
 
     {{/with}}
 </div>
-<hr>
-<div class="col-3">
-    <div class="card m-2">
-        <div class="card-body">
-            {{#each action_block}}
 
-            <button class="btn my-1 
-            {{#if isSuccess}}btn-success{{/if}} 
-            {{#if isDanger}}btn-danger{{/if}}
-            {{#if isInfo}}btn-info text-light{{/if}}">
-                {{text}}
-            </button>
-            {{/each}}
-        </div>
-    </div>
-    <div class="card m-2">
-        <div class="card-body">
-            {{#with total}}
-            <h4>{{title}}</h4>
-            {{#each item_list}}
-            <div>{{name}}: {{price}}</div>
-            {{/each}}
-            <hr>
-            {{#each additional_info}}
-            <div> {{text}}: {{value}}</div>
-            {{/each}}
-            <hr>
 
-            <div> {{total_price.text}}: {{total_price.value}}</div>
-            <hr>
-            {{#each button}}
-            {{#if isPrimary}}
-            <button type="button" class="btn btn-primary btn-sm my-2">{{text}}</button>
-            {{/if}}
-            {{#if isOutline}}
-            <button type="button" class="btn btn-outline-primary btn-sm my-2">{{text}}</button>
-            {{/if}}
-            {{/each}}
-
-            {{/with}}
-        </div>
-    </div>
-</div>
 <hr>
