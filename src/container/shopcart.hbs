@@ -9,8 +9,11 @@
     {{/with}}
 </div>
 <hr>
-
-{{> cartGoodsItem}}
+<div class="row mt-5">
+    {{#each goodsBlock}}
+    {{> cartGoodsItem}}
+    {{/each}}
+</div>
 
 <hr>
 
