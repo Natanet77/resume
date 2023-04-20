@@ -1,0 +1,30 @@
+<div class="row">
+
+    {{#with formBlock}}
+
+    <h1 class="mb-3">{{header}}</h1>
+    {{#with rating}}
+    <p>{{title}}: {{value}}</p>
+    {{/with}}
+
+    {{#with actionBlock}}
+    {{#each tabs}}
+    <div class="row">
+        <div class="col-8">
+            <div class="nav">
+                {{text}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+    {{/with}}
+
+    {{/with}}
+
+</div>
+
+
+
+
+{{> shopaction}}
+<hr>
