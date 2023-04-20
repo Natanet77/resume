@@ -1,0 +1,78 @@
+<div class="row">
+    {{#with header}}
+    <h3 class="gy-3">{{title}}</h3>
+    <div class="col-4 mt-2 mb-4">
+        {{#with button}}
+        <a href="{{link}}" target="_blank" class="btn btn-outline-dark">{{text}}</a>
+        {{/with}}
+    </div>
+    {{/with}}
+</div>
+<hr>
+<div class="row mt-5">
+    {{#each goodsBlock}}
+    {{> cartGoodsItem}}
+    {{/each}}
+</div>
+
+<hr>
+
+<div class="row">
+    {{#with total}}
+    <h3 class="mt-3">{{title}}</h3>
+    <b>{{amount}}</b>
+    <div>{{delivery}}</div>
+    <div class="col-4 mt-3">
+        {{#each buttons}}
+        <a href="{{link}}"
+            class="btn {{#if isSuccess}} btn-success {{else}} btn-outline-success{{/if}} mb-3">{{text}}</a>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
+
+<hr>
+
+<div class="row">
+    {{#with goodsOtherBlock}}
+    <b class="text-center mt-3 mb-2">{{title}}</b>
+
+    {{#each cards}}
+
+    <div class="col-4 gx-1 gy-4 mb-3">
+        <div class="card">
+
+            <img src="{{image}}">
+            <b class="mt-2">{{title}} {{#unless idNew}} <span
+                    class="badge text-bg-primary rounded pill">New</span>{{/unless}}
+                {{#if isHot}} <span class="badge text-bg-warning text-uppercase rounded pill">Hot!</span>{{/if}}</b>
+            <p>{{description}}</p>
+
+        </div>
+    </div>
+
+    {{/each}}
+    {{/with}}
+
+</div>
+
+<hr>
+
+<div class="row pt-5">
+    <div class="col-12">
+        {{#with subscribe}}
+        <div class="text-light alert bg-dark">
+            <h2>{{header}}</h2>
+            <p>{{description}}</p>
+            {{#each buttons}}
+            <div class="flex-column mb-2">
+                <a href="{{link}}" target="_blank" class="btn btn-primary">{{text}}</a>
+            </div>
+
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
+</div>
+<hr>
