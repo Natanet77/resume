@@ -37,11 +37,119 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
+router.get('/index', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'index',
+
+    header: {
+      firstname: 'Natalia',
+      lastname: 'Barsukova',
+      project: 'Resume project',
+    },
+
+    list: 'Список сторінок',
+    text: `Pet project for parsing sport betting data from different platforms ( odds ) and sport statistics (
+      tournament position, goals etc), analyzing by simple mathematics models and preparing probability
+      for such events like: money line - first win / draw / second win, totals etc.`,
+
+    buttons: [
+      {
+        text: 'bio',
+        link: '/bio',
+      },
+      {
+        text: 'car',
+        link: '/car',
+      },
+      {
+        text: 'education',
+        link: '/education',
+      },
+      {
+        text: 'facebook',
+        link: '/facebook',
+      },
+      {
+        text: 'js',
+        link: '/js',
+      },
+      {
+        text: 'mac',
+        link: '/mac',
+      },
+      {
+        text: 'person',
+        link: '/person',
+      },
+      {
+        text: 'program',
+        link: '/program',
+      },
+      {
+        text: 'shopcart',
+        link: '/shopcart',
+      },
+      {
+        text: 'shopcatalog',
+        link: '/shopcatalog',
+      },
+      {
+        text: 'shophome',
+        link: '/shophome',
+      },
+      {
+        text: 'shopnews',
+        link: '/shopnews',
+      },
+      {
+        text: 'shoporder',
+        link: '/shoporder',
+      },
+      {
+        text: 'shopproduct',
+        link: '/shopproduct',
+      },
+      {
+        text: 'shopprofile',
+        link: '/shopprofile',
+      },
+      {
+        text: 'shopreview',
+        link: '/shopreview',
+      },
+      {
+        text: 'skills',
+        link: '/skills',
+      },
+      {
+        text: 'summary',
+        link: '/summary',
+      },
+      {
+        text: 'task21',
+        link: '/task21',
+      },
+      {
+        text: 'task22',
+        link: '/task22',
+      },
+      {
+        text: 'task31',
+        link: '/task31',
+      },
+      {
+        text: 'web',
+        link: '/web',
+      },
+      {
+        text: 'work',
+        link: '/work',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -3426,7 +3534,6 @@ router.get('/shopreview', function (req, res) {
         },
       },
     ],
-
 
     service: {
       title: 'Our Services',

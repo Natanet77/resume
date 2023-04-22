@@ -3,18 +3,18 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
 
-<div>
+<div class="row mt-2 ms-2">
     {{#with main}}
     <main>
         <section>
             {{> title data="Work history" big=true}}
-            <div>
+            <div class="col-12 pb-2">
                 <ul>
                     {{#each works}}
                     <li>
                         <div>{{position}}</div>
 
-                        <br>
+
 
                         <div>
                             {{duration.from}} -
@@ -25,7 +25,7 @@
                             {{/if}}
                         </div>
 
-                        <br>
+
 
                         <div>
                             {{#if company.url}}
@@ -35,33 +35,31 @@
                             {{/if}}
                         </div>
 
-                        <br>
-                        <br>
 
-                        <div>
+                        <div class="mt-2">
                             <strong>Projects ({{projectAmount}})</strong>
                         </div>
 
-                        <br>
+
 
                         <ul>
                             {{#each projects}}
                             <li>
                                 <div>{{> link text=name href=url blank=true noLine=true}}</div>
 
-                                <br>
+
 
                                 <div>
                                     <p>{{about}}</p>
                                 </div>
 
-                                <br>
+
 
                                 <div>
                                     <em>Project stacks ({{stackAmount}})</em>
                                 </div>
 
-                                <br>
+
 
                                 <div>
                                     <ul>
@@ -70,7 +68,7 @@
                                         {{/each}}
                                     </ul>
                                 </div>
-                                <br>
+
                                 <div>
                                     <em>Project awards ({{awardAmount}})</em>
                                 </div>
@@ -86,7 +84,7 @@
                             {{/each}}
                         </ul>
                     </li>
-                    <br>
+
                     {{/each}}
                 </ul>
             </div>
