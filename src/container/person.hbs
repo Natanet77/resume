@@ -1,14 +1,14 @@
-<div>
+<div class="row mt-2">
     {{#with person}}
     <main>
         <div>
-            <h1>{{name}}</h1>
+            <h1 class="ms-3">{{name}}</h1>
         </div>
-        <div>
+        <div class="ms-3">
             <b>{{age}} / {{gender}}</b>
         </div>
         <br>
-        <address>{{#with address}}
+        <address class="ms-3">{{#with address}}
             <div>{{street}}</div>
             <div>{{city}}</div>
             <div>{{state}}</div>
